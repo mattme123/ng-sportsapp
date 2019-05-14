@@ -1,6 +1,16 @@
-#top-section {
-    height: 5em;
-    border: .075em;
+#border {
+    border-width: .075em;
     border-style: solid;
-    border-color: black;
+    white-space: nowrap;
+    width: 100%;
+    height: 6em;
+    overflow: hidden;
+}
+
+p.this {
+    margin-top: -1.2em;
+}
+
+p.this2 {
+    margin-top: -.8em;
 }
