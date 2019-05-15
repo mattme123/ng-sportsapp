@@ -1,10 +1,16 @@
+<div class="d-flex justify-content-center">
+  <div *ngIf='myService.gamesLoading' class="loader mt-3"></div>
+</div>
 <div class="row" *ngIf='realData'>
-
-  <div *ngFor='let i of realData.dailygameschedule.gameentry' (click)='gameClicked($event)' class="col-4" id="border">
-    <p class="d-flex justify-content-center">{{i.awayTeam.City}} {{i.awayTeam.Name}}</p>
+  <div *ngFor='let i of realData.dailygameschedule.gameentry; let item = index' class="col-4" id="border">
+    <p class="d-flex justify-content-center">{{i.awayTeam.Name}}</p>
     <p class="d-flex justify-content-center this">@</p>
-    <p class="d-flex justify-content-center this">{{i.homeTeam.City}} {{i.homeTeam.Name}}</p>
+    <p class="d-flex justify-content-center this">{{i.homeTeam.Name}}</p>
     <p class="d-flex justify-content-center this2">{{i.time}}</p>
+    <p aria-hidden="true" hidden>{{item}}</p>
+    <div class="d-flex justify-content-center">
+      <button value="{{i.awayTeam.City}}" (click)='gameClicked($event)'>Game</button>
+    </div>
   </div>
 
 

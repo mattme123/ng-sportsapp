@@ -8,30 +8,15 @@ import { SportsService } from '../sports.service';
 })
 export class HeaderComponent implements OnInit {
 
-  realData;
-  t;
+  date;
 
   constructor(
     private myService: SportsService
   ) { }
 
   ngOnInit() {
+    this.date = this.myService.currentDate;
   }
 
-  /*   data() {
-      // tslint:disable-next-line: max-line-length
-      this.myService.getRequest('https://api.mysportsfeeds.com/v1.0/pull/nhl/2019-playoff/daily_game_schedule.json?fordate=20190417').subscribe(
-        x => {
-          this.realData = x;
-        }
-      );
-      setTimeout(() => {
-        if (this.realData !== null) {
-          this.myService.recievedData = true;
-        } else {
-          alert('no data loaded');
-        }
-      }, 500);
 
-    } */
 }
