@@ -18,5 +18,35 @@ export class HeaderComponent implements OnInit {
     this.date = this.myService.currentDate;
   }
 
+  next() {
+    this.myService.gamesLoading = true;
+    this.myService.increaseDay();
+    this.myService.resetVars();
+    this.myService.homeP = null;
+    this.myService.awayP = null;
+    this.myService.getRequest(this.myService.url).subscribe(
+      x => {
+        this.myService.realData = x;
+        this.myService.gamesLoading = false;
+      }
+    );
+    this.date = this.myService.currentDate;
+  }
+
+  previous() {
+    this.myService.gamesLoading = true;
+    this.myService.decreaseDay();
+    this.myService.resetVars();
+    this.myService.homeP = null;
+    this.myService.awayP = null;
+    this.myService.getRequest(this.myService.url).subscribe(
+      x => {
+        this.myService.realData = x;
+        this.myService.gamesLoading = false;
+      }
+    );
+    this.date = this.myService.currentDate;
+  }
+
 
 }

@@ -1,16 +1,59 @@
 <div class="row">
   <div class="col-12" id="game-section">
-    <div class="d-flex justify-content-center">
-      <div *ngIf='myService.gameLoading' class="loader mt-3"></div>
-    </div>
+
     <h2 *ngIf='!myService.currentGame && !myService.gameLoading' class="d-flex justify-content-center mt-5">Choose a
       game
       from above</h2>
     <div *ngIf='myService.gameClicked' class="col-12">
-      <h4 class="d-flex justify-content-center mt-2">
+      <h5 class="d-flex justify-content-center mt-2">
         {{myService.currentGame.awayTeam.City}} {{myService.currentGame.awayTeam.Name}} @
         {{myService.currentGame.homeTeam.City}} {{myService.currentGame.homeTeam.Name}}
-      </h4>
+      </h5>
+
+    </div>
+    <div class="row">
+      <div *ngIf='myService.awayP' class="col mt-2 border">
+        <h6>Best Player - {{myService.awayP.team.Abbreviation}}</h6>
+        <p>
+          {{myService.awayP.player.LastName}}, {{myService.awayP.player.FirstName}}
+          #{{myService.awayP.player.JerseyNumber}}
+        </p>
+        <p>
+          Points: {{myService.awayP.stats.stats.Points['#text']}}
+        </p>
+        <p>
+          Goals: {{myService.awayP.stats.stats.Goals['#text']}}
+        </p>
+        <p>
+          Assists: {{myService.awayP.stats.stats.Assists['#text']}}
+        </p>
+        <p>
+          Plus/Minus: {{myService.awayP.stats.stats.PlusMinus['#text']}}
+        </p>
+      </div>
+      <div class="col-1"></div>
+      <div *ngIf='myService.homeP' class="col mt-2 border">
+        <h6>Best Player - {{myService.homeP.team.Abbreviation}}</h6>
+        <p>
+          {{myService.homeP.player.LastName}}, {{myService.homeP.player.FirstName}}
+          #{{myService.homeP.player.JerseyNumber}}
+        </p>
+        <p>
+          Points: {{myService.homeP.stats.stats.Points['#text']}}
+        </p>
+        <p>
+          Goals: {{myService.homeP.stats.stats.Goals['#text']}}
+        </p>
+        <p>
+          Assists: {{myService.homeP.stats.stats.Assists['#text']}}
+        </p>
+        <p>
+          Plus/Minus: {{myService.homeP.stats.stats.PlusMinus['#text']}}
+        </p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div *ngIf='myService.gameLoading' class="loader mt-3"></div>
     </div>
   </div>
 
