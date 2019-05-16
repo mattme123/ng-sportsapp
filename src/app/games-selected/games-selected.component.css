@@ -1,6 +1,6 @@
 #game-section {
     margin-top: 1em;
-    height: 17.5em;
+    height: 18.25em;
     border: .075em;
     border-style: solid;
     border-color: black;
@@ -24,4 +24,20 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+.my-border1 {
+    border-color: white;
+    border-bottom: none;
+    border-left: none;
+    border-style: solid;
+    border-width: .075em;
+}
+
+.my-border2 {
+    border-color: white;
+    border-bottom: none;
+    border-right: none;
+    border-style: solid;
+    border-width: .075em;
 }

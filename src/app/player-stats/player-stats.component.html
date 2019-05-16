@@ -1,3 +1,16 @@
-<p>
-  player-stats works!
-</p>
+<div *ngIf='myService.gameLoading' class="row border-mine">
+  <div class="col-12 d-flex justify-content-center">
+    <div class="loader mt-3"></div>
+  </div>
+</div>
+
+<div *ngIf='!myService.gameLoading' class="row border-mine">
+  <div *ngIf='myService.currentGame' class="col-12 d-flex justify-content-center m-2">
+    <h3>{{myService.currentGame.location}}</h3>
+  </div>
+  <div *ngIf='myService.currentGame' class="col-12 d-flex justify-content-center">
+    <h3>
+      {{myService.currentGame.time}}
+    </h3>
+  </div>
+</div>

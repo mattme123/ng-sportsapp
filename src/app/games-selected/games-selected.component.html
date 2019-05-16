@@ -12,8 +12,8 @@
 
     </div>
     <div class="row">
-      <div *ngIf='myService.awayP' class="col mt-2 border">
-        <h6>Best Player - {{myService.awayP.team.Abbreviation}}</h6>
+      <div *ngIf='myService.awayP' class="col mt-2 ml-1 my-border1">
+        <h6 class="mt-2">Best Player - {{myService.awayP.team.Abbreviation}}</h6>
         <p>
           {{myService.awayP.player.LastName}}, {{myService.awayP.player.FirstName}}
           #{{myService.awayP.player.JerseyNumber}}
@@ -32,8 +32,8 @@
         </p>
       </div>
       <div class="col-1"></div>
-      <div *ngIf='myService.homeP' class="col mt-2 border">
-        <h6>Best Player - {{myService.homeP.team.Abbreviation}}</h6>
+      <div *ngIf='myService.homeP' class="col mt-2 mr-1 my-border2">
+        <h6 class="mt-2">Best Player - {{myService.homeP.team.Abbreviation}}</h6>
         <p>
           {{myService.homeP.player.LastName}}, {{myService.homeP.player.FirstName}}
           #{{myService.homeP.player.JerseyNumber}}
