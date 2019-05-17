@@ -26,8 +26,10 @@ export class GamesSectionComponent implements OnInit, OnDestroy {
     // tslint:disable-next-line: max-line-length
     this.sub = this.myService.getRequest(this.url).subscribe(
       x => {
+        if (x.dailygameschedule.gameentry === undefined) {
+          this.myService.empty = true;
+        }
         this.myService.realData = x;
-        console.log(this.myService.realData);
         this.myService.gamesLoading = false;
       }
     );

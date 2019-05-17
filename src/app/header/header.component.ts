@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   next() {
+    this.myService.empty = false;
     this.myService.gamesLoading = true;
     this.myService.increaseDay();
     this.myService.resetVars();
@@ -28,12 +29,16 @@ export class HeaderComponent implements OnInit {
       x => {
         this.myService.realData = x;
         this.myService.gamesLoading = false;
+        if (x.dailygameschedule.gameentry === undefined) {
+          this.myService.empty = true;
+        }
       }
     );
     this.date = this.myService.currentDate;
   }
 
   previous() {
+    this.myService.empty = false;
     this.myService.gamesLoading = true;
     this.myService.decreaseDay();
     this.myService.resetVars();
@@ -41,8 +46,12 @@ export class HeaderComponent implements OnInit {
     this.myService.awayP = null;
     this.myService.getRequest(this.myService.url).subscribe(
       x => {
+        if (x.dailygameschedule.gameentry === undefined) {
+          this.myService.empty = true;
+        }
         this.myService.realData = x;
         this.myService.gamesLoading = false;
+
       }
     );
     this.date = this.myService.currentDate;

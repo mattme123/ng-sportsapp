@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class SportsService {
   gameClicked = false;
-  // recievedData = false;
+  empty = false;
   realData;
   currentGame: any;
   gameLoading = false;
